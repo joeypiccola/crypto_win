@@ -16,7 +16,7 @@ class crypto_win::ciphers::aes_256_256 {
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES 256/256\Enabled',
     type    => string,
     data    => $aes_256_256_enabled,
-    tyep    => dword,
+    type    => dword,
     require => Registry_key['aes_256_256'],
   }
 
