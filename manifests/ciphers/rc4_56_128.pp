@@ -14,7 +14,7 @@ class crypto_win::ciphers::rc4_56_128 {
   registry_value { 'rc4_56_128_enabled':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 56/128\Enabled',
-    type    => string,
+    type    => dword,
     data    => $rc4_56_128_enabled,
     require => Registry_key['rc4_56_128'],
   }

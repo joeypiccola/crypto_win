@@ -14,7 +14,7 @@ class crypto_win::keyexchangealgorithms::pkcs {
   registry_value { 'pkcs_enabled':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\PKCS\Enabled',
-    type    => string,
+    type    => dword,
     data    => $pkcs_enabled,
     require => Registry_key['pkcs'],
   }

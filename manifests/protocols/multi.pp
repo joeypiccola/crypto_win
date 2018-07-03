@@ -37,14 +37,14 @@ class crypto_win::protocols::multi {
   registry_value { 'multi_client_DisabledByDefault':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello\Client\DisabledByDefault',
-    type    => string,
+    type    => dword,
     data    => $multi_client_disabledbydefault,
     require => Registry_key['multi_client'],
   }
   registry_value { 'multi_client_Enabled':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello\Client\Enabled',
-    type    => string,
+    type    => dword,
     data    => $multi_client_enabled,
     require => Registry_key['multi_client'],
   }
@@ -52,14 +52,14 @@ class crypto_win::protocols::multi {
   registry_value { 'multi_server_DisabledByDefault':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello\Server\DisabledByDefault',
-    type    => string,
+    type    => dword,
     data    => $multi_server_disabledbydefault,
     require => Registry_key['multi_server'],
   }
   registry_value { 'multi_server_Enabled':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello\Server\Enabled',
-    type    => string,
+    type    => dword,
     data    => $multi_server_enabled,
     require => Registry_key['multi_server'],
   }

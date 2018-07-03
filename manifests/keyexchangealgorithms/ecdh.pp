@@ -14,7 +14,7 @@ class crypto_win::keyexchangealgorithms::ecdh {
   registry_value { 'ecdh_enabled':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\ECDH\Enabled',
-    type    => string,
+    type    => dword,
     data    => $ecdh_enabled,
     require => Registry_key['ecdh'],
   }

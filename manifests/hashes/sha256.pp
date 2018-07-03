@@ -14,7 +14,7 @@ class crypto_win::hashes::sha256 {
   registry_value { 'sha256_enabled':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA256\Enabled',
-    type    => string,
+    type    => dword,
     data    => $sha256_enabled,
     require => Registry_key['sha256'],
   }

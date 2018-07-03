@@ -14,7 +14,7 @@ class crypto_win::hashes::md5 {
   registry_value { 'md5_enabled':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\MD5\Enabled',
-    type    => string,
+    type    => dword,
     data    => $md5_enabled,
     require => Registry_key['md5'],
   }

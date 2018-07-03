@@ -14,7 +14,7 @@ class crypto_win::ciphers::aes_128_128 {
   registry_value { 'aes_128_128_enabled':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES 128/128\Enabled',
-    type    => string,
+    type    => dword,
     data    => $aes_128_128_enabled,
     require => Registry_key['aes_128_128'],
   }

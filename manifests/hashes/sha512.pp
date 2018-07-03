@@ -14,7 +14,7 @@ class crypto_win::hashes::sha512 {
   registry_value { 'sha512_enabled':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA512\Enabled',
-    type    => string,
+    type    => dword,
     data    => $sha512_enabled,
     require => Registry_key['sha512'],
   }

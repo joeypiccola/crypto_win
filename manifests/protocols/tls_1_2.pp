@@ -37,14 +37,14 @@ class crypto_win::protocols::tls_1_2 {
   registry_value { 'tls_1_2_client_DisabledByDefault':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client\DisabledByDefault',
-    type    => string,
+    type    => dword,
     data    => $tls_1_2_client_disabledbydefault,
     require => Registry_key['tls_1_2_client'],
   }
   registry_value { 'tls_1_2_client_Enabled':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client\Enabled',
-    type    => string,
+    type    => dword,
     data    => $tls_1_2_client_enabled,
     require => Registry_key['tls_1_2_client'],
   }
@@ -52,14 +52,14 @@ class crypto_win::protocols::tls_1_2 {
   registry_value { 'tls_1_2_server_DisabledByDefault':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server\DisabledByDefault',
-    type    => string,
+    type    => dword,
     data    => $tls_1_2_server_disabledbydefault,
     require => Registry_key['tls_1_2_server'],
   }
   registry_value { 'tls_1_2_server_Enabled':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server\Enabled',
-    type    => string,
+    type    => dword,
     data    => $tls_1_2_server_enabled,
     require => Registry_key['tls_1_2_server'],
   }

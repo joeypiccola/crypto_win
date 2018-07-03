@@ -14,7 +14,7 @@ class crypto_win::keyexchangealgorithms::diffie_hellman {
   registry_value { 'diffie_hellman_enabled':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\Diffie-Hellman\Enabled',
-    type    => string,
+    type    => dword,
     data    => $diffie_hellman_enabled,
     require => Registry_key['diffie_hellman'],
   }
