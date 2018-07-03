@@ -58,8 +58,8 @@ class crypto_win (
   include crypto_win::keyexchangealgorithms::ecdh
   include crypto_win::keyexchangealgorithms::diffie_hellman
 
-  include crypto_win::ciphers::aes_128
-  include crypto_win::ciphers::aes_256
+  include crypto_win::ciphers::aes_128_128
+  include crypto_win::ciphers::aes_256_256
   include crypto_win::ciphers::rc2_40_128
   include crypto_win::ciphers::rc2_56_128
   include crypto_win::ciphers::rc2_128_128
