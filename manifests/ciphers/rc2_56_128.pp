@@ -9,11 +9,11 @@ class crypto_win::ciphers::rc2_56_128 {
 
   registry_key { 'rc2_56_128':
     ensure => present,
-    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 128/128',
+    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 56/128',
   }
   registry_value { 'rc2_56_128_enabled':
     ensure  => present,
-    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 128/128\Enabled',
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 56/128\Enabled',
     type    => string,
     data    => $rc2_56_128_enabled,
     require => Registry_key['rc2_56_128'],
