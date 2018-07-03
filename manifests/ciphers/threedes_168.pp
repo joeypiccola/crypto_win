@@ -7,9 +7,16 @@ class crypto_win::ciphers::threedes_168 {
     $threedes_168_enabled = 0
   }
 
-  registry::value { 'Enabled':
-    key  => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168',
-    data => $threedes_168_enabled,
+  registry_key { 'threedes_168':
+    ensure => present,
+    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168',
+  }
+  registry_value { 'threedes_168_enabled':
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168\Enabled',
+    type    => string,
+    data    => $threedes_168_enabled,
+    require => Registry_key['threedes_168'],
   }
 
 }

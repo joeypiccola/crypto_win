@@ -7,9 +7,16 @@ class crypto_win::keyexchangealgorithms::ecdh {
     $ecdh_enabled = 0
   }
 
-  registry::value { 'Enabled':
-    key  => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\ECDH',
-    data => $ecdh_enabled,
+  registry_key { 'ecdh':
+    ensure => present,
+    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\ECDH',
+  }
+  registry_value { 'ecdh_enabled':
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\ECDH\Enabled',
+    type    => string,
+    data    => $ecdh_enabled,
+    require => Registry_key['ecdh'],
   }
 
 }

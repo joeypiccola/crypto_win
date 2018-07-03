@@ -7,9 +7,16 @@ class crypto_win::keyexchangealgorithms::pkcs {
     $pkcs_enabled = 0
   }
 
-  registry::value { 'Enabled':
-    key  => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\PKCS',
-    data => $pkcs_enabled,
+  registry_key { 'pkcs':
+    ensure => present,
+    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\PKCS',
+  }
+  registry_value { 'pkcs_enabled':
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\PKCS\Enabled',
+    type    => string,
+    data    => $pkcs_enabled,
+    require => Registry_key['pkcs'],
   }
 
 }

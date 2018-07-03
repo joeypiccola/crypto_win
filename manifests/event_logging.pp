@@ -7,9 +7,11 @@ class crypto_win::event_logging {
     $event_logging_enabled = 7
   }
 
-  registry::value { 'EventLogging':
-    key  => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL',
-    data => $event_logging_enabled,
+  registry_value { 'EventLogging':
+    ensure => present,
+    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\EventLogging',
+    type   => string,
+    data   => $event_logging_enabled,
   }
 
 }

@@ -7,9 +7,16 @@ class crypto_win::hashes::sha512 {
     $sha512_enabled = 0
   }
 
-  registry::value { 'Enabled':
-    key  => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA512',
-    data => $sha512_enabled,
+  registry_key { 'sha512':
+    ensure => present,
+    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA512',
+  }
+  registry_value { 'sha512_enabled':
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA512\Enabled',
+    type    => string,
+    data    => $sha512_enabled,
+    require => Registry_key['sha512'],
   }
 
 }

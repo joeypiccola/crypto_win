@@ -7,9 +7,16 @@ class crypto_win::hashes::sha384 {
     $sha384_enabled = 0
   }
 
-  registry::value { 'Enabled':
-    key  => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA384',
-    data => $sha384_enabled,
+  registry_key { 'sha384':
+    ensure => present,
+    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA384',
+  }
+  registry_value { 'sha384_enabled':
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA384\Enabled',
+    type    => string,
+    data    => $sha384_enabled,
+    require => Registry_key['sha384'],
   }
 
 }

@@ -7,9 +7,16 @@ class crypto_win::hashes::sha {
     $sha_enabled = 0
   }
 
-  registry::value { 'Enabled':
-    key  => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA',
-    data => $sha_enabled,
+  registry_key { 'sha':
+    ensure => present,
+    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA',
+  }
+  registry_value { 'sha_enabled':
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA\Enabled',
+    type    => string,
+    data    => $sha_enabled,
+    require => Registry_key['sha'],
   }
 
 }

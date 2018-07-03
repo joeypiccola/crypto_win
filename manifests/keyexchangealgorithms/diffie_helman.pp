@@ -7,9 +7,16 @@ class crypto_win::keyexchangealgorithms::diffie_hellman {
     $diffie_hellman_enabled = 0
   }
 
-  registry::value { 'Enabled':
-    key  => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\Diffie-Hellman',
-    data => $diffie_hellman_enabled,
+  registry_key { 'diffie_hellman':
+    ensure => present,
+    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\Diffie-Hellman',
+  }
+  registry_value { 'diffie_hellman_enabled':
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\Diffie-Hellman\Enabled',
+    type    => string,
+    data    => $diffie_hellman_enabled,
+    require => Registry_key['diffie_hellman'],
   }
 
 }
