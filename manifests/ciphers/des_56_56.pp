@@ -2,7 +2,7 @@
 class crypto_win::ciphers::des_56_56 {
 
   if $crypto_win::des_56_56 {
-    $des_56_56_enabled = 4294967295
+    $des_56_56_enabled = 0xFFFFFFFF
   } else {
     $des_56_56_enabled = 0
   }

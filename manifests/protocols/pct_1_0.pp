@@ -3,7 +3,7 @@ class crypto_win::protocols::pct_1_0 {
 
   if $crypto_win::pct_1_0_client {
     $pct_1_0_client_disabledbydefault = 0
-    $pct_1_0_client_enabled = 4294967295
+    $pct_1_0_client_enabled = 0xFFFFFFFF
   } else {
     $pct_1_0_client_disabledbydefault = 1
     $pct_1_0_client_enabled = 0
@@ -11,7 +11,7 @@ class crypto_win::protocols::pct_1_0 {
 
   if $crypto_win::pct_1_0_server {
     $pct_1_0_server_disabledbydefault = 0
-    $pct_1_0_server_enabled = 4294967295
+    $pct_1_0_server_enabled = 0xFFFFFFFF
   } else {
     $pct_1_0_server_disabledbydefault = 1
     $pct_1_0_server_enabled = 0

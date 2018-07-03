@@ -2,7 +2,7 @@
 class crypto_win::hashes::sha {
 
   if $crypto_win::sha {
-    $sha_enabled = 4294967295
+    $sha_enabled = 0xFFFFFFFF
   } else {
     $sha_enabled = 0
   }

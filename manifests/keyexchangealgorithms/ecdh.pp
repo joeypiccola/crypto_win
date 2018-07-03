@@ -2,7 +2,7 @@
 class crypto_win::keyexchangealgorithms::ecdh {
 
   if $crypto_win::ecdh {
-    $ecdh_enabled = 4294967295
+    $ecdh_enabled = 0xFFFFFFFF
   } else {
     $ecdh_enabled = 0
   }

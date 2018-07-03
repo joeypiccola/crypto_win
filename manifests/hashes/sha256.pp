@@ -2,7 +2,7 @@
 class crypto_win::hashes::sha256 {
 
   if $crypto_win::sha256 {
-    $sha256_enabled = 4294967295
+    $sha256_enabled = 0xFFFFFFFF
   } else {
     $sha256_enabled = 0
   }

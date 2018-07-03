@@ -2,7 +2,7 @@
 class crypto_win::ciphers::threedes_168 {
 
   if $crypto_win::threedes_168 {
-    $threedes_168_enabled = 4294967295
+    $threedes_168_enabled = 0xFFFFFFFF
   } else {
     $threedes_168_enabled = 0
   }

@@ -2,7 +2,7 @@
 class crypto_win::keyexchangealgorithms::pkcs {
 
   if $crypto_win::pkcs {
-    $pkcs_enabled = 4294967295
+    $pkcs_enabled = 0xFFFFFFFF
   } else {
     $pkcs_enabled = 0
   }

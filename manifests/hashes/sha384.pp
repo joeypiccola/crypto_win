@@ -2,7 +2,7 @@
 class crypto_win::hashes::sha384 {
 
   if $crypto_win::sha384 {
-    $sha384_enabled = 4294967295
+    $sha384_enabled = 0xFFFFFFFF
   } else {
     $sha384_enabled = 0
   }

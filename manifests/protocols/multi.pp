@@ -3,7 +3,7 @@ class crypto_win::protocols::multi {
 
   if $crypto_win::multi_client {
     $multi_client_disabledbydefault = 0
-    $multi_client_enabled = 4294967295
+    $multi_client_enabled = 0xFFFFFFFF
   } else {
     $multi_client_disabledbydefault = 1
     $multi_client_enabled = 0
@@ -11,7 +11,7 @@ class crypto_win::protocols::multi {
 
   if $crypto_win::multi_server {
     $multi_server_disabledbydefault = 0
-    $multi_server_enabled = 4294967295
+    $multi_server_enabled = 0xFFFFFFFF
   } else {
     $multi_server_disabledbydefault = 1
     $multi_server_enabled = 0

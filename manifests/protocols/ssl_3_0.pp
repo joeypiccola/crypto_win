@@ -3,7 +3,7 @@ class crypto_win::protocols::ssl_3_0 {
 
   if $crypto_win::ssl_3_0_client {
     $ssl_3_0_client_disabledbydefault = 0
-    $ssl_3_0_client_enabled = 4294967295
+    $ssl_3_0_client_enabled = 0xFFFFFFFF
   } else {
     $ssl_3_0_client_disabledbydefault = 1
     $ssl_3_0_client_enabled = 0
@@ -11,7 +11,7 @@ class crypto_win::protocols::ssl_3_0 {
 
   if $crypto_win::ssl_3_0_server {
     $ssl_3_0_server_disabledbydefault = 0
-    $ssl_3_0_server_enabled = 4294967295
+    $ssl_3_0_server_enabled = 0xFFFFFFFF
   } else {
     $ssl_3_0_server_disabledbydefault = 1
     $ssl_3_0_server_enabled = 0

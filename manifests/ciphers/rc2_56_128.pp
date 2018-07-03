@@ -2,7 +2,7 @@
 class crypto_win::ciphers::rc2_56_128 {
 
   if $crypto_win::rc2_56_128 {
-    $rc2_56_128_enabled = 4294967295
+    $rc2_56_128_enabled = 0xFFFFFFFF
   } else {
     $rc2_56_128_enabled = 0
   }

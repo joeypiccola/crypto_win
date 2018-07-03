@@ -2,7 +2,7 @@
 class crypto_win::ciphers::aes_128_128 {
 
   if $crypto_win::aes_128_128 {
-    $aes_128_128_enabled = 4294967295
+    $aes_128_128_enabled = 0xFFFFFFFF
   } else {
     $aes_128_128_enabled = 0
   }

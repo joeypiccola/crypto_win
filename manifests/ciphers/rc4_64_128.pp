@@ -2,7 +2,7 @@
 class crypto_win::ciphers::rc4_64_128 {
 
   if $crypto_win::rc4_64_128 {
-    $rc4_64_128_enabled = 4294967295
+    $rc4_64_128_enabled = 0xFFFFFFFF
   } else {
     $rc4_64_128_enabled = 0
   }

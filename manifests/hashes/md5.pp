@@ -2,7 +2,7 @@
 class crypto_win::hashes::md5 {
 
   if $crypto_win::md5 {
-    $md5_enabled = 4294967295
+    $md5_enabled = 0xFFFFFFFF
   } else {
     $md5_enabled = 0
   }

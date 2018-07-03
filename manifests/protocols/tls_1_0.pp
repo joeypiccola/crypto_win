@@ -3,7 +3,7 @@ class crypto_win::protocols::tls_1_0 {
 
   if $crypto_win::tls_1_0_client {
     $tls_1_0_client_disabledbydefault = 0
-    $tls_1_0_client_enabled = 4294967295
+    $tls_1_0_client_enabled = 0xFFFFFFFF
   } else {
     $tls_1_0_client_disabledbydefault = 1
     $tls_1_0_client_enabled = 0
@@ -11,7 +11,7 @@ class crypto_win::protocols::tls_1_0 {
 
   if $crypto_win::tls_1_0_server {
     $tls_1_0_server_disabledbydefault = 0
-    $tls_1_0_server_enabled = 4294967295
+    $tls_1_0_server_enabled = 0xFFFFFFFF
   } else {
     $tls_1_0_server_disabledbydefault = 1
     $tls_1_0_server_enabled = 0

@@ -2,7 +2,7 @@
 class crypto_win::keyexchangealgorithms::diffie_hellman {
 
   if $crypto_win::diffie_hellman {
-    $diffie_hellman_enabled = 4294967295
+    $diffie_hellman_enabled = 0xFFFFFFFF
   } else {
     $diffie_hellman_enabled = 0
   }

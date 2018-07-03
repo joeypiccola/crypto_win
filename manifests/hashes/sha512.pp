@@ -2,7 +2,7 @@
 class crypto_win::hashes::sha512 {
 
   if $crypto_win::sha512 {
-    $sha512_enabled = 4294967295
+    $sha512_enabled = 0xFFFFFFFF
   } else {
     $sha512_enabled = 0
   }
