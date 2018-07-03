@@ -14,9 +14,8 @@ class crypto_win::ciphers::null {
   registry_value { 'null_enabled':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\NULL\Enabled',
-    type    => string,
-    data    => $null_enabled,
     type    => dword,
+    data    => $null_enabled,
     require => Registry_key['null'],
   }
 
