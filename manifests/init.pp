@@ -48,11 +48,11 @@ class crypto_win (
   include crypto_win::protocols::tls_1_2
   include crypto_win::protocols::pct_1_0
 
-  # include crypto_win::hashes::md5
-  # include crypto_win::hashes::sha
-  # include crypto_win::hashes::sha256
-  # include crypto_win::hashes::sha384
-  # include crypto_win::hashes::sha512
+  include crypto_win::hashes::md5
+  include crypto_win::hashes::sha
+  include crypto_win::hashes::sha256
+  include crypto_win::hashes::sha384
+  include crypto_win::hashes::sha512
 
   include crypto_win::keyexchangealgorithms::pkcs
   include crypto_win::keyexchangealgorithms::ecdh
