@@ -2,9 +2,9 @@
 class crypto_win::ciphers::aes_256_256 {
 
   if $crypto_win::aes_256_256 {
-    $aes_256_256_enabled = 4294967295
+    $aes_256_256_enabled = '0xFFFFFFFF'
   } else {
-    $aes_256_256_enabled = 0
+    $aes_256_256_enabled = '0'
   }
 
   registry_key { 'aes_256_256':

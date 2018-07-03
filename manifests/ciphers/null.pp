@@ -2,9 +2,9 @@
 class crypto_win::ciphers::null {
 
   if $crypto_win::null {
-    $null_enabled = 4294967295
+    $null_enabled = 0xFFFFFFFF
   } else {
-    $null_enabled = 0
+    $null_enabled = '0'
   }
 
   registry_key { 'null':
