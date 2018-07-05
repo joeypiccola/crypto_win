@@ -6,7 +6,7 @@ Manage cryptographic settings on a Windows machine.
 ## Parameters
 
 ### Logging
- * ``` event_logging  ``` - Set Schannel event logging. Defaults to `true`.
+ * ``` event_logging ``` - Set Schannel event logging. Defaults to `true`.
 
 ### Protocols
  * ``` multi_client   ``` - Set Multi-Protocol Unified Hello client protocol. Defaults to `false`.
@@ -37,18 +37,18 @@ Manage cryptographic settings on a Windows machine.
  * ``` diffie_hellman ``` - Set Diffie-Hellman key exchange algorithm. Default to `true`.
 
 ### Ciphers
- * ``` aes_128_128    ``` - Set AES 128/128 cipher. Defaults to `true`.
- * ``` aes_256_256    ``` - Set AES 256/256 cipher. Defaults to `true`.
- * ``` rc2_40_128     ``` - Set RC2 40/128 cipher. Defaults to `false`.
- * ``` rc2_56_128     ``` - Set RC2 56/128 cipher. Defaults to `false`.
- * ``` rc2_128_128    ``` - Set RC2 128/128 cipher. Defaults to `false`.
- * ``` rc4_40_128     ``` - Set RC4 40/128 cipher. Defaults to `false`.
- * ``` rc4_56_128     ``` - Set RC4 56/128 cipher. Defaults to `false`.
- * ``` rc4_64_128     ``` - Set RC4 64/128 cipher. Defaults to `false`.
- * ``` rc4_128_128    ``` - Set RC4 128/128 cipher. Defaults to `false`.
- * ``` des_56_56      ``` - Set DES 56/56 cipher. Defaults to `false`.
- * ``` threedes_168   ``` - Set 3DES 168 cipher. Defaults to `false`.
- * ``` null           ``` - Set NULL cipher. Defaults to `false`.
+ * ``` aes_128_128  ``` - Set AES 128/128 cipher. Defaults to `true`.
+ * ``` aes_256_256  ``` - Set AES 256/256 cipher. Defaults to `true`.
+ * ``` rc2_40_128   ``` - Set RC2 40/128 cipher. Defaults to `false`.
+ * ``` rc2_56_128   ``` - Set RC2 56/128 cipher. Defaults to `false`.
+ * ``` rc2_128_128  ``` - Set RC2 128/128 cipher. Defaults to `false`.
+ * ``` rc4_40_128   ``` - Set RC4 40/128 cipher. Defaults to `false`.
+ * ``` rc4_56_128   ``` - Set RC4 56/128 cipher. Defaults to `false`.
+ * ``` rc4_64_128   ``` - Set RC4 64/128 cipher. Defaults to `false`.
+ * ``` rc4_128_128  ``` - Set RC4 128/128 cipher. Defaults to `false`.
+ * ``` des_56_56    ``` - Set DES 56/56 cipher. Defaults to `false`.
+ * ``` threedes_168 ``` - Set 3DES 168 cipher. Defaults to `false`.
+ * ``` null         ``` - Set NULL cipher. Defaults to `false`.
 
 ### Cipher Suits
 [COMING SOON, WIP]
