@@ -15,6 +15,7 @@ class crypto_win (
   Boolean $ssl_3_0_client = false,
   Boolean $ssl_3_0_server = false,
   Boolean $pct_1_0_client = false,
+  Boolean $pct_1_0_server = false,
   Boolean $md5            = false,
   Boolean $sha            = false,
   Boolean $sha256         = true,
