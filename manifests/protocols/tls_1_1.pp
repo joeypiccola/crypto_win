@@ -19,19 +19,19 @@ class crypto_win::protocols::tls_1_1 {
 
   # root key
   registry_key { 'tls_1_1':
-      ensure => present,
-      path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1',
+    ensure => present,
+    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1',
   }
   # client and serves keys
   registry_key { 'tls_1_1_client':
-      ensure  => present,
-      path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Client',
-      require => Registry_key['tls_1_1'],
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Client',
+    require => Registry_key['tls_1_1'],
   }
   registry_key { 'tls_1_1_server':
-      ensure  => present,
-      path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server',
-      require => Registry_key['tls_1_1'],
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server',
+    require => Registry_key['tls_1_1'],
   }
   # client values
   registry_value { 'tls_1_1_client_DisabledByDefault':

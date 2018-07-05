@@ -19,19 +19,19 @@ class crypto_win::protocols::ssl_3_0 {
 
   # root key
   registry_key { 'ssl_3_0':
-      ensure => present,
-      path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0',
+    ensure => present,
+    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0',
   }
   # client and serves keys
   registry_key { 'ssl_3_0_client':
-      ensure  => present,
-      path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Client',
-      require => Registry_key['ssl_3_0'],
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Client',
+    require => Registry_key['ssl_3_0'],
   }
   registry_key { 'ssl_3_0_server':
-      ensure  => present,
-      path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Server',
-      require => Registry_key['ssl_3_0'],
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Server',
+    require => Registry_key['ssl_3_0'],
   }
   # client values
   registry_value { 'ssl_3_0_client_DisabledByDefault':

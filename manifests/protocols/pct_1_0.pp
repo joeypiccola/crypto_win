@@ -19,19 +19,19 @@ class crypto_win::protocols::pct_1_0 {
 
   # root key
   registry_key { 'pct_1_0':
-      ensure => present,
-      path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0',
+    ensure => present,
+    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0',
   }
   # client and serves keys
   registry_key { 'pct_1_0_client':
-      ensure  => present,
-      path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0\Client',
-      require => Registry_key['pct_1_0'],
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0\Client',
+    require => Registry_key['pct_1_0'],
   }
   registry_key { 'pct_1_0_server':
-      ensure  => present,
-      path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0\Server',
-      require => Registry_key['pct_1_0'],
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0\Server',
+    require => Registry_key['pct_1_0'],
   }
   # client values
   registry_value { 'pct_1_0_client_DisabledByDefault':

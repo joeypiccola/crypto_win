@@ -19,19 +19,19 @@ class crypto_win::protocols::multi {
 
   # root key
   registry_key { 'multi':
-      ensure => present,
-      path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello',
+    ensure => present,
+    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello',
   }
   # client and serves keys
   registry_key { 'multi_client':
-      ensure  => present,
-      path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello\Client',
-      require => Registry_key['multi'],
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello\Client',
+    require => Registry_key['multi'],
   }
   registry_key { 'multi_server':
-      ensure  => present,
-      path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello\Server',
-      require => Registry_key['multi'],
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello\Server',
+    require => Registry_key['multi'],
   }
   # client values
   registry_value { 'multi_client_DisabledByDefault':

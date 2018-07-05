@@ -19,19 +19,19 @@ class crypto_win::protocols::ssl_2_0 {
 
   # root key
   registry_key { 'ssl_2_0':
-      ensure => present,
-      path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0',
+    ensure => present,
+    path   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0',
   }
   # client and serves keys
   registry_key { 'ssl_2_0_client':
-      ensure  => present,
-      path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Client',
-      require => Registry_key['ssl_2_0'],
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Client',
+    require => Registry_key['ssl_2_0'],
   }
   registry_key { 'ssl_2_0_server':
-      ensure  => present,
-      path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Server',
-      require => Registry_key['ssl_2_0'],
+    ensure  => present,
+    path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Server',
+    require => Registry_key['ssl_2_0'],
   }
   # client values
   registry_value { 'ssl_2_0_client_DisabledByDefault':
