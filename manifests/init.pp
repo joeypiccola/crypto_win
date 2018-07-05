@@ -20,7 +20,7 @@ class crypto_win (
   Boolean $sha256         = true,
   Boolean $sha384         = true,
   Boolean $sha512         = true,
-  Boolean $pkcs           = false,
+  Boolean $pkcs           = true,
   Boolean $ecdh           = true,
   Boolean $diffie_hellman = true,
   Boolean $aes_128_128    = true,
