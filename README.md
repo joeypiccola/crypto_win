@@ -1,7 +1,7 @@
 
 # crypto_win
 
-Manage cryptography settings on a Windows machine.
+Manage cryptographic settings on a Windows machine.
 
 ## Parameters
 
@@ -64,13 +64,13 @@ Below are the defaults for `crypto_win`.
 At a minimum include the `crypto_win` class.
 
 ## Example
-To use all defaults simply include the class. Below are the enabled defaults.
+To use all defaults simply include the class.
 
 ```
 include crypto_win
 ```
 
-To override a default simply supply the parameter and respective Boolean.
+To override a default simply supply the parameter and respective boolean.
 ```
 class { 'crypto_win':
   tls_1_1_client => true,
