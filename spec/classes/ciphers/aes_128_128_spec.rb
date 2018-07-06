@@ -23,13 +23,9 @@ describe 'crypto_win::ciphers::aes_128_128' do
             'path'   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES 128/128\Enabled',
             'type'   => 'dword',
             'data'   => 0xFFFFFFFF,
-          )
-        }
-
-        it {
-          is_expected.to contain_registry_value('aes_128_128_enabled').that_requires(
-            'Registry_key[aes_128_128]',
-          )
+          )#.that_requires(
+          #  'registry_key[aes_128_128]',
+          #)
         }
 
         it { is_expected.to compile }
