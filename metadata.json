@@ -6,7 +6,8 @@
   "license": "MIT",
   "source": "",
   "dependencies": [
-
+    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.20.0" },
+    { "name": "puppetlabs/registry", "version_requirement": ">= 1.1.4" }
   ],
   "operatingsystem_support": [
     {
