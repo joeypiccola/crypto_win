@@ -2,20 +2,30 @@
   "name": "jpi-crypto_win",
   "version": "0.1.0",
   "author": "Joey Piccola",
-  "summary": "",
+  "summary": "Manage cryptographic settings on a Windows machine.",
   "license": "MIT",
-  "source": "",
+  "source": "https://github.com/joeypiccola/crypto_win",
+  "project_page": "https://github.com/joeypiccola/crypto_win",
+  "issues_url": "https://github.com/joeypiccola/crypto_win/issues",
   "dependencies": [
-    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.20.0" },
-    { "name": "puppetlabs/registry", "version_requirement": ">= 1.1.4" }
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.20.0"
+    },
+    {
+      "name": "puppetlabs/registry",
+      "version_requirement": ">= 2.0.1"
+    }
   ],
   "operatingsystem_support": [
     {
       "operatingsystem": "windows",
       "operatingsystemrelease": [
+        "2008",
         "2008 R2",
+        "2012",
         "2012 R2",
-        "10"
+        "2016"
       ]
     }
   ],
