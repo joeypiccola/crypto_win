@@ -1,6 +1,6 @@
 {
   "name": "jpi-crypto_win",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Joey Piccola",
   "summary": "Manage cryptographic settings on a Windows machine.",
   "license": "MIT",
