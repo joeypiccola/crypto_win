@@ -8,7 +8,18 @@ Manage cryptographic settings on a Windows machine.
 ## Parameters
 
 ### Logging
- * ``` event_logging ``` - Set Schannel event logging. Defaults to `true`.
+ * ``` event_logging_level ``` - Set Schannel event logging. Defaults to `3`.
+
+| Decimal | Description                                                        |
+|---------|--------------------------------------------------------------------|
+| 0       | Do not log                                                         |
+| 1       | Log Error messages                                                 |
+| 2       | Log Warnings                                                       |
+| 3       | Log Error and Warning messages                                     |
+| 4       | Log Informational and Success events                               |
+| 5       | Log Error, Informational and Success events                        |
+| 6       | Log Warnings, Informational and Success events                     |
+| 7       | Log Everything (Warnings, Errors, Informational and Success events |
 
 ### Protocols
  * ``` multi_client   ``` - Set Multi-Protocol Unified Hello client protocol. Defaults to `false`.
@@ -58,9 +69,9 @@ Manage cryptographic settings on a Windows machine.
 ## Defaults
 Below are the defaults for `crypto_win`.
 
-|Logging|Protocols|Hashes|Key Exchange Algorithms|Ciphers|
-|---|---|---|---|---|
-|true|TLS 1.2 client & server|SHA256, SHA384, SHA512|PKCS, ECDH, Diffie-Hellman|AES 128/128, AES 256/256|
+| Logging| Protocols              | Hashes                | Key Exchange Algorithms   | Ciphers                 |
+|--------|------------------------|-----------------------|---------------------------|-------------------------|
+| 3      | TLS 1.2 client & server| SHA256, SHA384, SHA512| PKCS, ECDH, Diffie-Hellman| AES 128/128, AES 256/256|
 
 ## Usage
 At a minimum include the `crypto_win` class.

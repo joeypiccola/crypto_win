@@ -15,7 +15,7 @@ describe 'crypto_win::event_logging' do
             'ensure' => 'present',
             'path'   => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\EventLogging',
             'type'   => 'dword',
-            'data'   => 0,
+            'data'   => 3,
           )
         }
 
