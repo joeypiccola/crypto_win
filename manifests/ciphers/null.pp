@@ -17,6 +17,7 @@ class crypto_win::ciphers::null {
     type    => dword,
     data    => $null_enabled,
     require => Registry_key['null'],
+    notify  => Class['crypto_win'],
   }
 
 }

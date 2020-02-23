@@ -17,6 +17,7 @@ class crypto_win::keyexchangealgorithms::pkcs {
     type    => dword,
     data    => $pkcs_enabled,
     require => Registry_key['pkcs'],
+    notify  => Class['crypto_win'],
   }
 
 }

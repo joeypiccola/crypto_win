@@ -17,6 +17,7 @@ class crypto_win::hashes::sha {
     type    => dword,
     data    => $sha_enabled,
     require => Registry_key['sha'],
+    notify  => Class['crypto_win'],
   }
 
 }

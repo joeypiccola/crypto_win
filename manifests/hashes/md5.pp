@@ -17,6 +17,7 @@ class crypto_win::hashes::md5 {
     type    => dword,
     data    => $md5_enabled,
     require => Registry_key['md5'],
+    notify  => Class['crypto_win'],
   }
 
 }

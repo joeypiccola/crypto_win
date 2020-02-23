@@ -17,6 +17,7 @@ class crypto_win::ciphers::des_56_56 {
     type    => dword,
     data    => $des_56_56_enabled,
     require => Registry_key['des_56_56'],
+    notify  => Class['crypto_win'],
   }
 
 }

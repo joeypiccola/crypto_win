@@ -7,6 +7,9 @@ Manage cryptographic settings on a Windows machine.
 
 ## Parameters
 
+### Allow Reboot
+ * ``` allow_reboot ``` - Controls if system can be rebooted, when crypto settings are modified. If reboot not allowed, then apropriate error event can be observed in Eventlog. Defaults to `false`.
+
 ### Logging
  * ``` event_logging_level ``` - Set Schannel event logging. Defaults to `3`.
 

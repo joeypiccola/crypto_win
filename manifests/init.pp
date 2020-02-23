@@ -36,7 +36,7 @@ class crypto_win (
   Boolean $des_56_56                = false,
   Boolean $threedes_168             = false,
   Boolean $null                     = false,
-
+  Boolean $allow_reboot             = false,
 ) {
 
   include crypto_win::event_logging
@@ -71,5 +71,23 @@ class crypto_win (
   include crypto_win::ciphers::des_56_56
   include crypto_win::ciphers::threedes_168
   include crypto_win::ciphers::null
+
+  if $crypto_win::allow_reboot {
+
+    reboot { 'reboot-crypto_win':
+      when        => 'refreshed'
+    }
+
+
+  } else {
+
+    exec { 'crypto_win_reboot_not_allowed' :
+      command     =>  'Write-EventLog -LogName "Application"  -Source "Puppet" -EntryType Error -Message "Crypto settings were changed by Puppet::crypto_win module. System Reboot is required, but prevented by the allow_reboot=false setting." -Category 1  -EventID 99',
+      provider    => powershell,
+      logoutput   => true,
+      refreshonly => true,
+    }
+
+  }
 
 }

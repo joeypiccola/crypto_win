@@ -17,6 +17,7 @@ class crypto_win::keyexchangealgorithms::diffie_hellman {
     type    => dword,
     data    => $diffie_hellman_enabled,
     require => Registry_key['diffie_hellman'],
+    notify  => Class['crypto_win'],
   }
 
 }

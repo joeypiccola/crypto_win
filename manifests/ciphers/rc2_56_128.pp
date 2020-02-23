@@ -17,6 +17,7 @@ class crypto_win::ciphers::rc2_56_128 {
     type    => dword,
     data    => $rc2_56_128_enabled,
     require => Registry_key['rc2_56_128'],
+    notify  => Class['crypto_win'],
   }
 
 }

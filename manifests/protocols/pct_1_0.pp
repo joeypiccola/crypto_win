@@ -27,11 +27,13 @@ class crypto_win::protocols::pct_1_0 {
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0\Client',
     require => Registry_key['pct_1_0'],
+    notify  => Class['crypto_win'],
   }
   registry_key { 'pct_1_0_server':
     ensure  => present,
     path    => 'HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0\Server',
     require => Registry_key['pct_1_0'],
+    notify  => Class['crypto_win'],
   }
   # client values
   registry_value { 'pct_1_0_client_DisabledByDefault':
@@ -40,6 +42,7 @@ class crypto_win::protocols::pct_1_0 {
     type    => dword,
     data    => $pct_1_0_client_disabledbydefault,
     require => Registry_key['pct_1_0_client'],
+    notify  => Class['crypto_win'],
   }
   registry_value { 'pct_1_0_client_Enabled':
     ensure  => present,
@@ -47,6 +50,7 @@ class crypto_win::protocols::pct_1_0 {
     type    => dword,
     data    => $pct_1_0_client_enabled,
     require => Registry_key['pct_1_0_client'],
+    notify  => Class['crypto_win'],
   }
   # server values
   registry_value { 'pct_1_0_server_DisabledByDefault':
@@ -55,6 +59,7 @@ class crypto_win::protocols::pct_1_0 {
     type    => dword,
     data    => $pct_1_0_server_disabledbydefault,
     require => Registry_key['pct_1_0_server'],
+    notify  => Class['crypto_win'],
   }
   registry_value { 'pct_1_0_server_Enabled':
     ensure  => present,
@@ -62,6 +67,7 @@ class crypto_win::protocols::pct_1_0 {
     type    => dword,
     data    => $pct_1_0_server_enabled,
     require => Registry_key['pct_1_0_server'],
+    notify  => Class['crypto_win'],
   }
 
 }
