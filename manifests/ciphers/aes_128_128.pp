@@ -17,6 +17,7 @@ class crypto_win::ciphers::aes_128_128 {
     type    => dword,
     data    => $aes_128_128_enabled,
     require => Registry_key['aes_128_128'],
+    notify  => Class['crypto_win'],
   }
 
 }

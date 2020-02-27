@@ -17,6 +17,7 @@ class crypto_win::hashes::sha384 {
     type    => dword,
     data    => $sha384_enabled,
     require => Registry_key['sha384'],
+    notify  => Class['crypto_win'],
   }
 
 }

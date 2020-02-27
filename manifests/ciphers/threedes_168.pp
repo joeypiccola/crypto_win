@@ -17,6 +17,7 @@ class crypto_win::ciphers::threedes_168 {
     type    => dword,
     data    => $threedes_168_enabled,
     require => Registry_key['threedes_168'],
+    notify  => Class['crypto_win'],
   }
 
 }

@@ -1,6 +1,17 @@
-# == Class: crypto_win
+# @summary
+#   manage IIS SSL/TLS crypto settings
+#
+# @param allow_reboot
+#   Defaults to false
+#   If true and  configuration state has been change, has changed, the system will reboot after finish.
+#   If false and configuration state has been change, an error is reported via Eventlog:
+#   Eventlog category: Application
+#   Source: Puppet
+#   Message: Crypto settings were changed by Puppet::crypto_win module. System Reboot is required, but prevented by the allow_reboot=false setting.
+#   EventID: 99
+#   Category: 1
+#
 class crypto_win (
-
   Integer[0,7] $event_logging_level = 3,
   Boolean $multi_client             = false,
   Boolean $multi_server             = false,
@@ -36,7 +47,7 @@ class crypto_win (
   Boolean $des_56_56                = false,
   Boolean $threedes_168             = false,
   Boolean $null                     = false,
-
+  Boolean $allow_reboot             = false,
 ) {
 
   include crypto_win::event_logging
@@ -71,5 +82,25 @@ class crypto_win (
   include crypto_win::ciphers::des_56_56
   include crypto_win::ciphers::threedes_168
   include crypto_win::ciphers::null
+
+  if $crypto_win::allow_reboot {
+
+    reboot { 'reboot-crypto_win':
+      when   => 'refreshed',
+      apply  => 'finished',
+      message =>  'Reboot triggere by crypto_winr Puppet module.',
+    }
+
+
+  } else {
+
+    exec { 'crypto_win_reboot_not_allowed' :
+      command     =>  'Write-EventLog -LogName "Application"  -Source "Puppet" -EntryType Error -Message "Crypto settings were changed by Puppet::crypto_win module. System Reboot is required, but prevented by the allow_reboot=false setting." -Category 1  -EventID 99',
+      provider    => powershell,
+      logoutput   => true,
+      refreshonly => true,
+    }
+
+  }
 
 }

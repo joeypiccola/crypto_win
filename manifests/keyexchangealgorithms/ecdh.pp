@@ -17,6 +17,7 @@ class crypto_win::keyexchangealgorithms::ecdh {
     type    => dword,
     data    => $ecdh_enabled,
     require => Registry_key['ecdh'],
+    notify  => Class['crypto_win'],
   }
 
 }
